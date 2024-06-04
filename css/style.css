@@ -1,8 +1,16 @@
 @charset "utf-8";
 
-h1{
-  color: # ff0000;
-  font-size :20px;
-  font-family :serif;
-  
+* {
+  background-color: #333;
+  color: #EEE;
+}
+h1 {
+  background-color: #555;
+  color: #EEE;
+}
+marquee {
+  color: darkkhaki;
+}
+a {
+  color: darkcyan;
 }
