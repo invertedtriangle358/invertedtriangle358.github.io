@@ -39,6 +39,19 @@ img {
   height: auto;
 }
 
+.container {
+  display: flex;
+}
+
+.container p{
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.container img{
+  margin-right: 10px;
+}
+
 .copylight{
 text-align: center;
 }
