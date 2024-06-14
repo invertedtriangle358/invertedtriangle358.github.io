@@ -19,6 +19,14 @@ html {
   color: #EEE;
 }
 
+marquee {
+  color: darkkhaki;
+}
+
+a {
+  color: darkcyan;
+}
+
 h1 {
   display: flex;
   justify-content: center;
@@ -29,26 +37,14 @@ h1 {
   color: #EEE;
 }
 
-marquee {
-  color: darkkhaki;
-}
-
-.main {
+h2 {
   font-size: 30px;
-  text-align: center;
 }
-
-a {
-  color: darkcyan;
-}
-
-img {
-  width: 150px;
-  height: auto;
-}
-
-.container {
-  display: flex;
+/*ここからなんもわからない　あとでやる*/
+main .container {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .container p {
@@ -57,7 +53,23 @@ img {
 }
 
 .container img {
+  display: block;
+  width: 150px;
+  height: auto;
   margin-right: 10px;
+}
+
+.container .bio {
+  display: block;
+  flex-grow: 1;
+}
+
+.img {
+  text-align: center;
+}
+
+.container span {
+  display: inline;
 }
 
 .copylight {
