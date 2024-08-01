@@ -1,5 +1,4 @@
-@import
-url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @charset "utf-8";
 
 /*Base Style*/
@@ -8,7 +7,8 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-*::before, *::after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -16,10 +16,10 @@ html {
   margin: 7px;
 
   background-color: #333;
-  color: #EEE;
+  color: #eee;
 }
 
-marquee {
+.announce {
   color: darkkhaki;
 }
 
@@ -34,7 +34,7 @@ h1 {
 
   border-radius: 15px;
   background-color: #555;
-  color: #EEE;
+  color: #eee;
 }
 
 h2 {
@@ -73,5 +73,5 @@ main .container {
 }
 
 .copylight {
-text-align: center;
+  text-align: center;
 }
