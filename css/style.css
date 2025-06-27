@@ -27,14 +27,33 @@ a {
   color: darkcyan;
 }
 
+.site-container {
+  display: flex; /* アイコンとタイトルを横並びにする */
+  align-items: center; /* 垂直方向の中央揃え */
+  gap: 10px; /* アイコンとタイトルの間のスペース */
+}
+
+.site-icon {
+  width: 64px; /* アイコンの幅 */
+  height: 64px; /* アイコンの高さ */
+  border-radius: 20%;
+}
+
+.site-title {
+  margin: 0; /* h1タグのデフォルトのマージンをリセット */
+  white-space: nowrap; /* タイトルが改行されないようにする */
+}
+
 h1 {
   display: flex;
   justify-content: center;
   font-size: 50px;
 
   border-radius: 15px;
-  background-color: #555;
-  color: #eee;
+  padding: 5px 10px;
+  background-color: #878787;
+  color: #000000;
+  display: inline-block;
 }
 
 h2 {
