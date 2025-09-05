@@ -30,7 +30,7 @@ a {
 .site-container {
   display: flex; /* アイコンとタイトルを横並びにする */
   align-items: center; /* 垂直方向の中央揃え */
-  gap: 10px; /* アイコンとタイトルの間のスペース */
+  gap: 1px; /* アイコンとタイトルの間のスペース */
 }
 
 .site-icon {
