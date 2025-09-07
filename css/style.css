@@ -1,74 +1,70 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 @charset "utf-8";
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
-/*Base Style*/
+/* Base Style */
 html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+*,
 *::before,
 *::after {
   box-sizing: inherit;
 }
 
-* {
-  margin: 7px;
-
+body {
+  margin: 0;
+  padding: 1rem;
   background-color: #333;
   color: #eee;
-}
-
-.announce {
-  color: darkkhaki;
+  line-height: 1.6;
 }
 
 a {
   color: darkcyan;
 }
 
+.announce {
+  color: darkkhaki;
+}
+
+/* Header */
 .site-container {
-  display: flex; /* アイコンとタイトルを横並びにする */
-  align-items: center; /* 垂直方向の中央揃え */
-  gap: 1px; /* アイコンとタイトルの間のスペース */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .site-icon {
-  width: 64px; /* アイコンの幅 */
-  height: 64px; /* アイコンの高さ */
+  width: 64px;
+  height: 64px;
   border-radius: 20%;
 }
 
 .site-title {
-  margin: 0; /* h1タグのデフォルトのマージンをリセット */
-  white-space: nowrap; /* タイトルが改行されないようにする */
+  margin: 0;
+  white-space: nowrap;
 }
 
 h1 {
-  display: flex;
-  justify-content: center;
   font-size: 50px;
-
   border-radius: 15px;
   padding: 5px 10px;
   background-color: #878787;
-  color: #000000;
+  color: #000;
   display: inline-block;
 }
 
 h2 {
   font-size: 30px;
 }
-/*ここからなんもわからない　あとでやる*/
-main .container {
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-}
 
-.container p {
-  margin-top: auto;
-  margin-bottom: auto;
+/* Main */
+main .container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .container img {
@@ -79,7 +75,6 @@ main .container {
 }
 
 .container .bio {
-  display: block;
   flex-grow: 1;
 }
 
@@ -87,10 +82,8 @@ main .container {
   text-align: center;
 }
 
-.container span {
-  display: inline;
-}
-
+/* Footer */
 .copylight {
   text-align: center;
+  margin-top: 2rem;
 }
