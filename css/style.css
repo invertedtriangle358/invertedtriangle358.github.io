@@ -48,6 +48,32 @@ a:hover {
   font-weight: bold;
 }
 
+/*コピーボタン*/
+.pubkey {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #353535;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+.copy-btn {
+  background: none;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  color: #eee;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #444;
+}
+
 /* ========== ヘッダー ========== */
 header {
   background-color: var(--bg-header);
