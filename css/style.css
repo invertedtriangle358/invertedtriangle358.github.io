@@ -1,12 +1,24 @@
 @charset "utf-8";
 @import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css");
 
-/* Base Style */
+/* ========== カラーテーマ（ダーク＋差し色2色） ========== */
+:root {
+  --bg-main: #2c2c2c;    /* 全体背景 */
+  --bg-card: #353535;    /* コンテンツ用カード背景 */
+  --bg-header: #242424;  /* ヘッダー/フッター背景 */
+
+  --text-main: #e0e0e0;  /* 通常文字 */
+  --text-sub: #aaa;      /* 補助文字 */
+
+  --accent-link: #4db6ac; /* リンク用シアン */
+  --accent-warn: #d0c060; /* アナウンス用カラシ */
+}
+
+/* ========== ベーススタイル ========== */
 html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 *,
 *::before,
 *::after {
@@ -16,14 +28,14 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #2c2c2c; /* やや明るめのダーク */
-  color: #e0e0e0;           /* 真っ白より少し柔らかい */
+  background-color: var(--bg-main);
+  color: var(--text-main);
   line-height: 1.7;
 }
 
-/* Text & Links */
+/* ========== テキスト & リンク ========== */
 a {
-  color: #4db6ac;
+  color: var(--accent-link);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -32,13 +44,13 @@ a:hover {
 }
 
 .announce {
-  color: #d0c060; /* darkkhaki より柔らかめ */
+  color: var(--accent-warn);
   font-weight: bold;
 }
 
-/* Header */
+/* ========== ヘッダー ========== */
 header {
-  background-color: #242424; /* body より濃くして区切り */
+  background-color: var(--bg-header);
   padding: 1rem;
 }
 .site-container {
@@ -54,7 +66,7 @@ header {
 .site-title {
   margin: 0;
   white-space: nowrap;
-  color: #fafafa; /* 少しだけ白に近づける */
+  color: #fafafa;
 }
 h1 {
   font-size: 2.5rem;
@@ -69,15 +81,15 @@ h2 {
   color: #f0f0f0;
 }
 
-/* Main */
+/* ========== メインコンテンツ ========== */
 main .container {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  background-color: #353535; /* bodyよりちょっと明るいカード調 */
-  border-radius: 10px;
   margin: 1rem;
+  background-color: var(--bg-card);
+  border-radius: 10px;
 }
 .container img {
   display: block;
@@ -86,16 +98,16 @@ main .container {
   border-radius: 6px;
 }
 .container .bio {
-  color: #ccc; /* 本文はサブ的に */
+  color: var(--text-sub);
 }
 .img {
   text-align: center;
-  color: #aaa;
+  color: var(--text-sub);
 }
 
-/* Footer */
+/* ========== フッター ========== */
 footer {
-  background-color: #242424;
+  background-color: var(--bg-header);
   padding: 2rem 1rem;
   margin-top: 2rem;
 }
@@ -106,6 +118,6 @@ footer {
 .copylight {
   text-align: center;
   margin-top: 1.5rem;
-  color: #888;
+  color: var(--text-sub);
   font-size: 0.85rem;
 }
