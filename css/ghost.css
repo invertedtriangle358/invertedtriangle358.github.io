@@ -1,3 +1,15 @@
 body {
   font-family: "Sawarabi Mincho", serif;
 }
+
+:root {
+  --bg-main: #2c2c2c;    /* 全体背景 */
+  --bg-card: #353535;    /* コンテンツ用カード背景 */
+  --bg-header: #242424;  /* ヘッダー/フッター背景 */
+
+  --text-main: #e0e0e0;  /* 通常文字 */
+  --text-sub: #aaa;      /* 補助文字 */
+
+  --accent-link: #4db6ac; /* リンク用シアン */
+  --accent-warn: #d0c060; /* アナウンス用カラシ */
+}
