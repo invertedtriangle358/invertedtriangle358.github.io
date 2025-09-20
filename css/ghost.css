@@ -81,6 +81,23 @@ header {
   color: var(--text-sub);
 }
 
+.header-info .makibishi {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--accent-warn);
+  background-color: #ffffff; /* 白い背景に */
+  padding: 0.2em 0.4em;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を付けて浮き上がらせる */
+  border: 1px solid #dcdcdc; /* 薄いボーダー */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-info .makibishi:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
 /* ========== メインコンテンツ ========== */
 main {
   padding: 1.5rem;
