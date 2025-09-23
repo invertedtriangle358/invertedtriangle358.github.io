@@ -22,71 +22,20 @@
 <body>
   <header class="header">
     <div class="site-container">
-      <style>
-.site-icon {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-}
+      <!-- アイコン -->
+      <img src="https://raw.githubusercontent.com/invertedtriangle358/images/main/Sankaku/Sankaku_icon.jpg" 
+           alt="アイコン" 
+           class="site-icon" 
+           id="icon" />
 
-.popup-menu {
-  display: none;
-  position: absolute;
-  top: 60px; /* アイコンの下に表示 */
-  left: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  padding: 10px;
-  z-index: 1000;
-}
-
-.popup-menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.popup-menu li {
-  padding: 8px 12px;
-  cursor: pointer;
-}
-
-.popup-menu li:hover {
-  background: #f0f0f0;
-}
-</style>
-
-<!-- アイコン -->
-<img src="https://raw.githubusercontent.com/invertedtriangle358/images/main/Sankaku/Sankaku_icon.jpg" 
-     alt="アイコン" 
-     class="site-icon" 
-     id="icon" />
-
-<!-- ポップアップメニュー -->
-<div class="popup-menu" id="popupMenu">
-  <ul>
-    <li>プロフィール</li>
-    <li>設定</li>
-    <li>ログアウト</li>
-  </ul>
-</div>
-
-<script>
-const icon = document.getElementById("icon");
-const menu = document.getElementById("popupMenu");
-
-icon.addEventListener("click", (e) => {
-  e.stopPropagation();
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-});
-
-// 外側クリックで閉じる
-document.addEventListener("click", () => {
-  menu.style.display = "none";
-});
-</script>
+      <!-- ポップアップメニュー -->
+      <div class="popup-menu" id="popupMenu">
+        <ul>
+          <li>プロフィール</li>
+          <li>設定</li>
+          <li>ログアウト</li>
+        </ul>
+      </div>
 
       <h1 class="site-title">逆参角空間</h1>
     </div>
@@ -102,25 +51,17 @@ document.addEventListener("click", () => {
       <h2>ABOUT：逆砂_参角</h2>
       <p class="bio">一般人。非技術者。趣味で絵と文字をかいています。</p>
       <p class="img">【ここに画像やらなんやらを添付予定】</p>
-      <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/sankaku_banner.png?raw=true">
+      <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/sankaku_banner.png?raw=true" alt="バナー">
+      
       <h3>Nostr公開鍵</h3>
       <p class="pubkey">
-  <span class="pubkey-text" 
-        data-copy="npub10hqkwugj7p027j250qr9gwcuqpkwxftj0rjjk8y6hlmryu8dwp8s2runf2"
-        style="cursor: pointer;">
-    npub10hqkwugj7p027j250qr9gwcuqpk<br>
-    wxftj0rjjk8y6hlmryu8dwp8s2runf2
-  </span>
-</p>
-
-<script>
-document.querySelector(".pubkey-text").addEventListener("click", function() {
-  const text = this.getAttribute("data-copy");
-  navigator.clipboard.writeText(text).then(() => {
-    alert("コピーしました！");
-  });
-});
-</script>
+        <span class="pubkey-text" 
+              data-copy="npub10hqkwugj7p027j250qr9gwcuqpkwxftj0rjjk8y6hlmryu8dwp8s2runf2"
+              style="cursor: pointer;">
+          npub10hqkwugj7p027j250qr9gwcuqpk<br>
+          wxftj0rjjk8y6hlmryu8dwp8s2runf2
+        </span>
+      </p>
     </div>
   </main>
 
@@ -172,21 +113,22 @@ document.querySelector(".pubkey-text").addEventListener("click", function() {
           View zaps 👀
         </button>
       </div>
-<div class="banner">
-  <a href="https://sites.google.com/view/happy-busy/" target="_blank" rel="noopener">
-    <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/EmbeddedImage.png?raw=true" alt="Happy Busy バナー" class="banner-img">
-  </a>
-  <a href="https://ssp.shillest.net/" target="_blank" rel="noopener">
-    <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/bagutora_banner.png?raw=true" alt="Bugtraq バナー" class="banner-img">
-  </a>
+
+      <div class="banner">
+        <a href="https://sites.google.com/view/happy-busy/" target="_blank" rel="noopener">
+          <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/EmbeddedImage.png?raw=true" alt="Happy Busy バナー" class="banner-img">
+        </a>
+        <a href="https://ssp.shillest.net/" target="_blank" rel="noopener">
+          <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/bagutora_banner.png?raw=true" alt="Bugtraq バナー" class="banner-img">
+        </a>
   <!--<a href="https://stok33.github.io/" target="_blank" rel="noopener">
       <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/bana_1.png?raw=true" alt="souko バナー" class="banner-img">
       </a>-->
-  <p>絵の参考</p>
-  <a href="https://www.katch.ne.jp/~yk-ts/index.html" target="_blank" rel="noopener">
-    <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/banner_m.gif?raw=true" alt="rakugaki バナー" class="banner-img">
-  </a>
-</div>
+        <p>絵の参考</p>
+        <a href="https://www.katch.ne.jp/~yk-ts/index.html" target="_blank" rel="noopener">
+          <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/banner_m.gif?raw=true" alt="rakugaki バナー" class="banner-img">
+        </a>
+      </div>
 
       <p class="copylight">
         <small>inverted.triangle358 © 2023-2025</small>
