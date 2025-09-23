@@ -40,14 +40,22 @@
       <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/sankaku_banner.png?raw=true">
       <h3>Nostr公開鍵</h3>
       <p class="pubkey">
-       <span class="pubkey-text">
-        npub10hqkwugj7p027j250qr9gwcuqpk<br>
-         wxftj0rjjk8y6hlmryu8dwp8s2runf2
-       </span>
-  <button class="copy-btn" data-copy="npub10hqkwugj7p027j250qr9gwcuqpkwxftj0rjjk8y6hlmryu8dwp8s2runf2" title="コピー">
-    📋
-  </button>
-      </p>
+  <span class="pubkey-text" 
+        data-copy="npub10hqkwugj7p027j250qr9gwcuqpkwxftj0rjjk8y6hlmryu8dwp8s2runf2"
+        style="cursor: pointer;">
+    npub10hqkwugj7p027j250qr9gwcuqpk<br>
+    wxftj0rjjk8y6hlmryu8dwp8s2runf2
+  </span>
+</p>
+
+<script>
+document.querySelector(".pubkey-text").addEventListener("click", function() {
+  const text = this.getAttribute("data-copy");
+  navigator.clipboard.writeText(text).then(() => {
+    alert("コピーしました！");
+  });
+});
+</script>
     </div>
   </main>
 
