@@ -107,6 +107,43 @@ h2 {
   color: #f0f0f0;
 }
 
+.site-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.popup-menu {
+  display: none;
+  position: absolute;
+  top: 60px; /* アイコンの下に表示 */
+  left: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 1000;
+}
+
+.popup-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.popup-menu li {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.popup-menu li:hover {
+  background: #f0f0f0;
+}
+
+/* 他の装飾はここに追記 */
+
+
 /* ========== メインコンテンツ ========== */
 main .container {
   display: flex;
