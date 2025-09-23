@@ -32,6 +32,22 @@ body {
   line-height: 1.7;
 }
 
+.header-info {
+  display: flex;          /* 横並びにする */
+  align-items: center;    /* 縦位置を揃える */
+  gap: 0.5rem;            /* 要素間の余白 */
+}
+
+.header-info .makibishi {
+  font-size: 1.5rem;      /* 大きさ調整（必要なら） */
+  cursor: pointer;
+}
+
+.header-info p {
+  margin: 0;              /* デフォルト余白を消す */
+}
+
+
 /* ========== テキスト & リンク ========== */
 h1 {
   font-size: 2.5rem;
