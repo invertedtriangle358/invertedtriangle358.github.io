@@ -98,11 +98,11 @@ header {
 }
 
 .header-info .makibishi {
-  font-size: 2.5rem;
+  font-size: 2px;
   font-weight: bold;
   color: var(--accent-warn);
   background-color: #ffffff; /* 白い背景に */
-  padding: 0.2em 0.4em;
+  padding: 5px 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影を付けて浮き上がらせる */
   border: 1px solid #dcdcdc; /* 薄いボーダー */
