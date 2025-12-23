@@ -140,7 +140,7 @@ section {
 
 .interview-section dt {
   font-weight: bold;
-  color: var(--accent-link);
+  color: var(--accent-warn);
   margin-top: 1rem;
 }
 
