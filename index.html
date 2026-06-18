@@ -114,6 +114,52 @@
         </button>
       </div>
 
+      <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+
+<div style="font-family: sans-serif; max-width: 300px; margin: 20px auto; text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <div style="margin-bottom: 15px; text-align: left;">
+        <label for="stellar-amount" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px; font-weight: bold;">送金金額 (XLM)</label>
+        <input type="number" id="stellar-amount" value="1" min="0.0000001" step="any" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
+    </div>
+    
+    <button id="stellar-pay-btn" style="background-color: #0866ff; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold;">
+        Stellarで送金する
+    </button>
+    <canvas id="qrcode-canvas" style="margin-top: 15px; display: none; border: 1px solid #ccc; padding: 10px; border-radius: 8px; width: 200px; height: 200px; margin-left: auto; margin-right: auto;"></canvas>
+</div>
+
+<script>
+(() => {
+    const btn = document.getElementById('stellar-pay-btn');
+    const amountInput = document.getElementById('stellar-amount');
+    if (!btn || !amountInput) return;
+
+    btn.addEventListener('click', async () => {
+        // 【重要】ここのアドレスをご自身のLOBSTR等のアドレスに書き換えてください
+        const destination = "GARNSNBFH3YJSYT2D3NKF2YIHW2UH4KYRUEUQYDOO4XBJOKYNFOF6LOI"; 
+        
+        // 入力された金額を取得（空欄の場合は1にする）
+        const amount = amountInput.value || "1"; 
+        const memo = "StellarTest"; 
+
+        const stellarUri = `web+stellar:pay?destination=${destination}&amount=${amount}&memo=${encodeURIComponent(memo)}&memo_type=MEMO_TEXT`;
+        const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            window.location.href = stellarUri;
+        } else {
+            const canvas = document.getElementById('qrcode-canvas');
+            try {
+                await QRCode.toCanvas(canvas, stellarUri, { width: 200 });
+                canvas.style.display = "block"; 
+            } catch (err) {
+                console.error("QRコードの生成に失敗しました:", err);
+            }
+        }
+    });
+})();
+</script>
+      
       <div class="banner">
         <a href="https://sites.google.com/view/happy-busy/" target="_blank" rel="noopener">
           <img src="https://github.com/invertedtriangle358/images/blob/main/Sankaku/EmbeddedImage.png?raw=true" alt="Happy Busy バナー" class="banner-img">
