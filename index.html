@@ -116,12 +116,12 @@
 
 <div style="font-family: sans-serif; max-width: 300px; margin: 20px auto; text-align: center; border: 1px solid #eee; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); background: #fff;">
     <div style="margin-bottom: 15px; text-align: left;">
-        <label for="stellar-amount" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px; font-weight: bold;">送金金額 (XLM)</label>
+        <label for="stellar-amount" style="font-size: 14px; color: #555; display: block; margin-bottom: 5px; font-weight: bold;">Amount XLM</label>
         <input type="number" id="stellar-amount" value="1" min="0" step="1" style="width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box;">
     </div>
     
     <button id="stellar-pay-btn" style="background-color: #0866ff; color: white; border: none; padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer; width: 100%; font-weight: bold;">
-        Stellarで送金する
+        Send a tip with Lumens
     </button>
     
     <div id="stellar-error-msg" style="color: red; font-size: 12px; margin-top: 10px; display: none;"></div>
@@ -131,52 +131,13 @@
     </div>
 </div>
 
+<script src="./xlm-send-button.js"></script>
+
 <script>
-(() => {
-    const btn = document.getElementById('stellar-pay-btn');
-    const amountInput = document.getElementById('stellar-amount');
-    const qrcodeContainer = document.getElementById('qrcode-container');
-    const qrcodeImg = document.getElementById('qrcode-img');
-    const errorDiv = document.getElementById('stellar-error-msg');
-
-    if (!btn || !amountInput || !qrcodeContainer || !qrcodeImg || !errorDiv) return;
-
-    btn.addEventListener('click', () => {
-        // 初期化
-        errorDiv.style.display = "none";
-        errorDiv.innerText = "";
-        qrcodeContainer.style.display = "none";
-
-        // 【重要】ここのアドレスをご自身のLOBSTR等のアドレスに書き換えてください
-        const destination = "GARNSNBFH3YJSYT2D3NKF2YIHW2UH4KYRUEUQYDOO4XBJOKYNFOF6LOI"; 
-        
-        const amount = amountInput.value; 
-        if (!amount || parseFloat(amount) <= 0) {
-            errorDiv.innerText = "エラー: 0より大きい正しい金額を入力してください。";
-            errorDiv.style.display = "block";
-            return;
-        }
-
-        const memo = "NostrTest"; 
-        const stellarUri = `web+stellar:pay?destination=${destination}&amount=${amount}&memo=${encodeURIComponent(memo)}&memo_type=MEMO_TEXT`;
-        const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-
-        if (isMobile) {
-            window.location.href = stellarUri;
-        } else {
-            try {
-                // QRコードを無料の生成API経由で即時画像化
-                const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(stellarUri)}`;
-                qrcodeImg.src = qrUrl;
-                qrcodeContainer.style.display = "block"; 
-            } catch (err) {
-                errorDiv.innerText = "QRコードの表示に失敗しました。";
-                errorDiv.style.display = "block";
-                console.error(err);
-            }
-        }
-    });
-})();
+XLMButton.init({
+  destination: "GARNSNBFH3YJSYT2D3NKF2YIHW2UH4KYRUEUQYDOO4XBJOKYNFOF6LOI",
+  amount: "1"
+});
 </script>
       
       <div class="banner">
