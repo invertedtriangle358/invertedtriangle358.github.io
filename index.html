@@ -197,8 +197,7 @@
             alert("Enter a valid XLM amount");
             return;
         }
-        const stellarUri =
-        `web+stellar:pay?destination=${DESTINATION}&amount=${amount}&memo=${encodeURIComponent(MEMO_TEXT)}&memo_type=MEMO_TEXT`;
+        const stellarUri =`web+stellar:pay?destination=${DESTINATION}&amount=${amount}`;
         const isMobile =
         /Android|iPhone|iPad/i.test(navigator.userAgent);
         if (isMobile) {
